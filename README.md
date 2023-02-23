@@ -1,6 +1,6 @@
 # Carbon App in FOR19
 
-Welcome to the Carbon App, built on the FOR19 framework. This app helps users to calculate and track their carbon footprint based on their daily activities.
+Welcome to the Carbon App, built on the Flask framework. This app helps users to calculate and track their carbon footprint based on their daily activities.
 
 ## Getting Started
 
