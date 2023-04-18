@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+
+    {% extends "template.html" %}
+    {% set active_page = "home" %}
+    {% block content %}
+  
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    
+    
+    <div class="form_wrapper">
+        <div class="form_container">
+          <div class="title_container">
+            <h2> Login</h2>
+          </div>
+          <div class="row clearfix">
+            <div class="">
+              <form method="post" action="">
+                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+                  <input type="email" name="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required /> 
+                </div>
+                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+                  <input type="password" name="password" placeholder="Password" pattern=".{8,}" title="The password must a least be 8 char" required />
+                </div>
+                <input class="button" type="submit" value="Log in" />
+                <div class="form-text ">
+                  Need an account? <a href="/register"> Register</a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    {% endblock %}
+    
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Methodology</title>
+</head>
+<body>
+
+    {% extends "template.html" %}
+    {% set active_page = "methodology" %}
+    {% block content %}
+
+    <section class="section_header_home">
+        <div class="container">
+            <div class="home">
+                <h2 class="text"> Methodology</h2>
+            </div>
+            <div class="home">
+                <div class="header_home">
+                    <div class="box">
+                      <p class="text_align_left"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut tenetur soluta amet, ipsum, provident possimus quo at consequuntur temporibus eius cupiditate. Nostrum aut numquam impedit doloremque quo laborum eaque rerum provident sed est incidunt dolore libero, at distinctio tenetur dicta. Expedita necessitatibus est, illo excepturi dolore fugit animi maiores sequi.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda itaque impedit libero et mollitia pariatur rerum quibusdam veritatis beatae? Itaque necessitatibus doloribus ab porro totam ullam repellat tenetur fugit maiores!
+                      </p>
+                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#infoModal">
+                        Information
+                      </button>
+                    </div>
+                  </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Information</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti accusamus asperiores ipsam assumenda eligendi pariatur praesentium itaque sit sunt, rerum laborum animi id blanditiis sed aut sequi maxime qui. Odio!
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+            </div>
+        </div>
+      </section> 
+      <!-- Developers-->
+      <section class="section_formulas">
+        <div class="container">
+          <div class="developers d_team">
+            <h1 style="text-align: center;"> Formulas</h1>
+          </div>
+          <div class="formulas">
+            <div class="box-formula">
+                Sum:
+                \[ \sum_{n=1}^{\infty} 2^{-n} = 1 \]
+            </div>
+            <div class="box-formula">
+                Limits:
+                \[ \lim_{x\to\infty} f(x) \]
+            </div>
+            <div class="box-formula">
+                Expression:
+                \[ x^2 + y^2 = z^2 \]
+            </div>
+            <div class="box-formula">
+                Integral:
+                \[ \int_{a}^{b} x^2 \,dx \]
+            </div>
+          </div>
+
+            
+            
+      </section>
+
+   
+
+    {% endblock %}
+    
+</body>
+</html>

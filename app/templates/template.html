@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"> </script>
+  <!-- JQuery-->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <!-- Custome css and JS-->
+  <link rel="stylesheet" href="{{url_for('static', filename='custome.css')}}">
+  <script src="/static/customScript.js" crossorigin="anonymous"></script>  
+  <!-- Mathjax -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- Font Awesome-->
+  <link rel="stylesheet" href="/static/font-awesome/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div id="wrap" class="container-background">
+    <div id="main">
+      <!-- Creating navbar and setting active page -->
+      {% set navigation_bar_logout = [
+        ('/', 'home', 'Home'),
+        ('/methodology', 'methodology', "Methodology"),
+        ('/carbon_app', 'carbon_app', 'Carbon App'),
+        ('/register', 'register', 'Register'),
+        ('/login', 'login', 'Login'),
+        ] -%}
+
+      {% set navigation_bar_login = [
+        ('/', 'home', 'Home'),
+        ('/methodology', 'methodology', "Methodology"),
+        ('/carbon_app', 'carbon_app', 'Carbon App'),
+        ('/logout', 'logout', 'Logout')
+        ] -%}
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary" id="navbar">
+        <div class="container-fluid">
+          <!--Navbar Brand-->
+          <a class="navbar-brand" href="/">
+            <h4 class="notranslate" id="nav-heading" href="/"> 
+              <img src="static/images/navbar.png" height="40" class="d-inline-block align-top">  
+            </h4>
+          </a>
+          <!-- Navbar collaps button when screens get's small-->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!-- Navbar items, iteriate trough the navigation_bar list-->
+          <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              {% if session['logged_in'] == True %}
+              {% for href, id, caption in navigation_bar_login %}
+              <li 
+                {% if id == active_page %} 
+                  class="nav-item active" 
+                {% else %} 
+                  class="nav-item" 
+                {% endif %}>
+                <a class="nav-link" href="{{ href|e }}">{{ caption|e }}</a>
+              </li>
+              {% endfor %}
+              {% else %}
+              {% for href, id, caption in navigation_bar_logout %}
+              <li 
+                {% if id == active_page %} 
+                  class="nav-item active" 
+                {% else %} 
+                  class="nav-item" 
+                {% endif %}>
+                <a class="nav-link" href="{{ href|e }}">{{ caption|e }}</a>
+              </li>
+              {% endfor %}
+              {% endif %}
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      
+        {% block content %}
+        {% endblock %}
+      
+
+	  </div> 
+  </div>
+
+  <!-- Footer -->
+  <div class="footer" id="footer">
+    {% block footer %}
+    <footer class="text-center text-lg-start footer">
+      <!-- Copyright -->
+      <div class="text-center p-3"> <bold>© 2023 Group 1 NHH </bold>
+      </div>
+    </footer>
+    {% endblock %}
+  </div>
+
+</body>
+</html>

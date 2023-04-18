@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+
+    {% extends "template.html" %}
+    {% set active_page = "home" %}
+    {% block content %}
+    
+<!-- Header -->
+<section class="section_header_home">
+    <div class="container">
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            {% for message in messages %}
+             <div class="alert alert-success">
+                  {{ message }}
+              </div>
+            {% endfor %}
+              <script>
+                  setTimeout(function() {
+                      var flashes = document.querySelectorAll('.alert');
+                      flashes.forEach(flash => flash.remove())
+                  }, 5000);
+              </script>
+          {% endif %}
+      {% endwith %}
+      <div class="home">
+        <h2 class="text"> Home</h2>
+      </div>
+        <div class="home">
+            <div class="header_home">
+                <div class="box">
+                  <p class="text_align_left"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut tenetur soluta amet, ipsum, provident possimus quo at consequuntur temporibus eius cupiditate. Nostrum aut numquam impedit doloremque quo laborum eaque rerum provident sed est incidunt dolore libero, at distinctio tenetur dicta. Expedita necessitatibus est, illo excepturi dolore fugit animi maiores sequi.
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda itaque impedit libero et mollitia pariatur rerum quibusdam veritatis beatae? Itaque necessitatibus doloribus ab porro totam ullam repellat tenetur fugit maiores!
+                  </p>
+                </div>
+              
+                <div class="box">
+                  <img src="static/images/main_logo.png" width="300" alt="">
+                </div>
+              </div>
+
+        </div>
+    </div>
+  </section> 
+  <!-- Developers-->
+  <section class="section_developers">
+    <div class="container">
+      <div class="developers d_team">
+        <h1 style="text-align: center;"> Our Team</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum quo recusandae sed praesentium corporis necessitatibus facilis et eveniet, hic illo! Assumenda modi quasi dolores, dicta velit laudantium magni nam quia laborum nostrum fuga eveniet, maxime maiores voluptates doloribus pariatur omnis?
+        </p>
+      </div>
+      <div class="developers">  <!-- Creats an list with name, and filename off photo-->
+        {% set dev_team = [
+          ("Christian", 'Christian.jpg'), 
+          ('Sara', 'Sara.jpg'), 
+          ('Richard', 'Richard.jpg'),
+          ('Per Ole', 'Per.jpg'),
+          ('Jon', 'Jon.jpg')]
+          -%}
+
+        {% for name, path in dev_team %} <!-- Iteratre trough the list, and per element ( .., ..) I create two minor elements-->
+        <div class="box">
+            <img src="static/images/{{path}}" alt="" style="border-radius: 50%; width:200px;">
+          <h3> {{ name }}</h3>
+          <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae temporibus repellendus eos nemo voluptas ducimus repudiandae esse possimus, a maxime sed quod iste minima quis!</p>
+          <div class="container_buttons_developers">
+            <a class="btn_developers" type="button" data-bs-toggle="modal" data-bs-target="#cv_Modal"> Curriculum </a> <!-- bs-target links to the id of the modal-->
+          </div>
+          <div class="container_buttons_developers">
+            <a class="btn_developers" href="https://github.com/Eriksen1110/FOR19" target="_blank"> <!-- Using _blank to apen a new tab-->
+              GitHub
+            </a>
+          </div>
+        </div>
+        {% endfor %}
+     <!-- Modal -->
+     <div class="modal fade" id="cv_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg " style="height: 80%;" >
+        <div class="modal-content" style="height:100%">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Curriculum</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <iframe src="static/CV.pdf" width="100%" height="100%"></iframe>  <!-- Using iframe to view the pdf file.-->
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+        
+  </section>
+    {% endblock %}
+    
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>404 not found</title>
+
+  </head>
+  <body>
+  
+   {% extends "template.html" %}
+   {% set active_page = "404" %}
+   {% block content %}
+   
+  <h1> 404 - Not Found</h1>
+  <h3>Oops! Looks like the page doesn't exist anymore</h3> 
+  <br>
+  <a href="/"><p>Click Here </a>to go to the Home Page</p>
+
+  {% endblock %}
+    
+  </body>
+</html>

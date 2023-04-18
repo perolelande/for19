@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+
+    {% extends "template.html" %}
+    {% set active_page = "home" %}
+    {% block content %}
+    
+    <div class="form_wrapper">
+        <div class="form_container">
+          <div class="title_container">
+            <h2> Registration Form</h2>
+          </div>
+          <div class="row clearfix">
+            <div class="">
+              <form method="post" action="">
+                <div class="row clearfix">
+                    <div class="col_half">
+                      <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                        <input type="text" name="f:name" placeholder="First Name" required />
+                      </div>
+                    </div>
+                    <div class="col_half">
+                      <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                        <input type="text" name="l:name" placeholder="Last Name" required />
+                      </div>
+                    </div>
+                  </div>
+                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+                  <input type="email" name="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Eposten må være på formatet navn@domain.xx" required />
+                </div>
+                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+                  <input type="password" id="password" name="password" placeholder="Password" pattern=".{8,}" title="The password must be atleast 8 char" required />
+                </div>
+                <div class="input_field" id="password_re_div"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+                  <input type="password"  id="password_re" name="password_re"  placeholder="Re-type Password" pattern=".{8,}" title="The password must be atleast 8 char" required />
+                </div>         
+                <div class="invalid-feedback" id="feedback">Example invalid form file feedback</div>             
+                <input class="button" id="submit_reg_form" type="submit" value="Register" />
+                <div class="form-text ">
+                  Already have an account? <a href="/login"> Login</a>
+
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+        $('#password, #password_re').on('keyup', function () {
+          if ($('#password').val() == $('#password_re').val()) {
+            $('#feedback').html('Matching').css('display', 'none');
+          } else 
+            $('#feedback').html('The password are not matching').css('display', 'inline');
+        });
+      </script>
+    
+
+    {% endblock %}
+    
+</body>
+</html>
