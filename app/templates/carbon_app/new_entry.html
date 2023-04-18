@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% block content %}
+<head>
+    <link
+    rel="stylesheet"
+    type="text/css"
+    href="{{ url_for('static', filename='carbon_app.css') }}"
+  />
+</head>
+<!-- Header -->
+<section class="section_header_home">
+    <div class="container">
+      <div class="header_home">
+        <div class="box_home">
+          <h1 style="font-size: 55px">
+            <span class="text-logo"> Please enter your transport!</span>
+          </h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto molestias a cupiditate fugiat delectus asperiores corrupti ratione impedit facilis consectetur maiores dignissimos veritatis quos, ab corporis voluptatem libero vero commodi! Tempore quas sunt necessitatibus ipsa, accusamus eaque expedita dignissimos sapiente pariatur delectus, quibusdam optio porro. Deserunt adipisci quidem magni in.
+          </p>
+        </div>
+      </div>
+
+      <div class="container_buttons_header_home" style="text-align: center;">
+        <div class="btn_carbon">
+          <a
+            href="{{url_for('carbon_app.new_entry')}}"
+            class="btn btn-primary btn-lg mr-2"
+            ,
+            style="background-color: #f37979; border: #f37979;"
+            >New entry</a
+          >
+          <a
+          href="{{url_for('carbon_app.your_data')}}"
+          class="btn btn-primary btn-lg mr-2"
+          ,
+          style="background-color: #f37979; border: #f37979;"
+          >Your data</a
+        >
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

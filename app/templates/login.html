@@ -9,7 +9,7 @@
 <body>
 
     {% extends "template.html" %}
-    {% set active_page = "home" %}
+    {% set active_page = "login" %}
     {% block content %}
   
     {% with messages = get_flashed_messages() %}
@@ -37,7 +37,7 @@
                   <input type="email" name="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required /> 
                 </div>
                 <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
-                  <input type="password" name="password" placeholder="Password" pattern=".{8,}" title="The password must a least be 8 char" required />
+                  <input type="password" name="password" placeholder="Password" pattern=".{8,}" title="The password must at least be 8 characters" required />
                 </div>
                 <input class="button" type="submit" value="Log in" />
                 <div class="form-text ">

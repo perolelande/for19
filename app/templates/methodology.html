@@ -12,30 +12,29 @@
     {% set active_page = "methodology" %}
     {% block content %}
 
-    <section class="section_header_home">
-        <div class="container">
-            <div class="home">
-                <h2 class="text"> Methodology</h2>
+    <section class="section_header">
+      <div class="container">
+        <div class="home">
+            <h2 class="text"> Methodology</h2>
+        </div>
+          <div class="header_home">
+            <div class="box">
+              <p class="text_align_left"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut tenetur soluta amet, ipsum, provident possimus quo at consequuntur temporibus eius cupiditate. Nostrum aut numquam impedit doloremque quo laborum eaque rerum provident sed est incidunt dolore libero, at distinctio tenetur dicta. Expedita necessitatibus est, illo excepturi dolore fugit animi maiores sequi.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda itaque impedit libero et mollitia pariatur rerum quibusdam veritatis beatae? Itaque necessitatibus doloribus ab porro totam ullam repellat tenetur fugit maiores!
+              </p>
+              <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#infoModal">
+                Paper
+              </button>
+              <a href="{{url_for('carbon_app.carbon_application')}}" class="btn" style="color: black; text-decoration: none;">Carbon App</a>
             </div>
-            <div class="home">
-                <div class="header_home">
-                    <div class="box">
-                      <p class="text_align_left"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut tenetur soluta amet, ipsum, provident possimus quo at consequuntur temporibus eius cupiditate. Nostrum aut numquam impedit doloremque quo laborum eaque rerum provident sed est incidunt dolore libero, at distinctio tenetur dicta. Expedita necessitatibus est, illo excepturi dolore fugit animi maiores sequi.
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda itaque impedit libero et mollitia pariatur rerum quibusdam veritatis beatae? Itaque necessitatibus doloribus ab porro totam ullam repellat tenetur fugit maiores!
-                      </p>
-                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#infoModal">
-                        Information
-                      </button>
-                    </div>
-                  </div>
-            </div>
+          </div>
         </div>
         <!-- Modal -->
         <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Information</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Paper</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -46,9 +45,9 @@
                 </div>
             </div>
             </div>
-        </div>
-      </section> 
-      <!-- Developers-->
+      </div>
+    </section> 
+      <!-- Formulas-->
       <section class="section_formulas">
         <div class="container">
           <div class="developers d_team">
@@ -71,13 +70,8 @@
                 Integral:
                 \[ \int_{a}^{b} x^2 \,dx \]
             </div>
-          </div>
-
-            
-            
+          </div> 
       </section>
-
-   
 
     {% endblock %}
     

@@ -9,7 +9,7 @@
 <body>
 
     {% extends "template.html" %}
-    {% set active_page = "home" %}
+    {% set active_page = "register" %}
     {% block content %}
     
     <div class="form_wrapper">
@@ -33,13 +33,13 @@
                     </div>
                   </div>
                 <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
-                  <input type="email" name="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Eposten må være på formatet navn@domain.xx" required />
+                  <input type="email" name="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Please use the following format: name@domain.xx" required />
                 </div>
                 <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
-                  <input type="password" id="password" name="password" placeholder="Password" pattern=".{8,}" title="The password must be atleast 8 char" required />
+                  <input type="password" id="password" name="password" placeholder="Password" pattern=".{8,}" title="The password must be at least 8 characters" required />
                 </div>
                 <div class="input_field" id="password_re_div"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
-                  <input type="password"  id="password_re" name="password_re"  placeholder="Re-type Password" pattern=".{8,}" title="The password must be atleast 8 char" required />
+                  <input type="password"  id="password_re" name="password_re"  placeholder="Confirm Password" pattern=".{8,}" title="The password must be at least 8 characters" required />
                 </div>         
                 <div class="invalid-feedback" id="feedback">Example invalid form file feedback</div>             
                 <input class="button" id="submit_reg_form" type="submit" value="Register" />
@@ -57,7 +57,7 @@
           if ($('#password').val() == $('#password_re').val()) {
             $('#feedback').html('Matching').css('display', 'none');
           } else 
-            $('#feedback').html('The password are not matching').css('display', 'inline');
+            $('#feedback').html('The passwords are not matching').css('display', 'inline');
         });
       </script>
     

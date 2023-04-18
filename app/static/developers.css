@@ -1,0 +1,59 @@
+/* Developers */
+.section_developers {
+  background-color: #f4f7f1;
+  padding: 20px;
+}
+
+.developers {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.d_team {
+  display: block;
+}
+
+.developers .box {
+  background-color: #ccdac4;
+  color: black;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  margin: 10px;
+  transition: transform 0.3s ease;
+}
+
+.btn_developers {
+  background-color: #628354;
+  border-radius: 3px;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: black;
+  margin: 4px 2px;
+  text-align: center;
+  border: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.btn_developers:hover {
+  transform: translateY(2px);
+  box-shadow: none;
+  color: black;
+  background-color: #557249;
+}
+
+.btn_developers:active {
+  transform: translateY(4px);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2),
+    inset 0 0 8px rgba(0, 0, 0, 0.4);
+}
+
+.box-image {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  margin-top: 10px;
+  margin-bottom: 20px;
+}

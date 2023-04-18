@@ -5,15 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carbon App</title>
+
+  
 </head>
 <body>
     {% extends "template.html" %}
     {% set active_page = "carbon_app" %}
     {% block content %}
-    <section class="section_header_home">
+    <section class="section_header">
         <div class="container">
             <div class="home">
-                <h2 class="text"> Carbon App</h2>
+                <h2 class="text"> Carbon App Calculator</h2>
             </div>
             <div class="home">
                 <div class="header_home">
@@ -21,15 +23,8 @@
                       <p class="text_align_left"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut tenetur soluta amet, ipsum, provident possimus quo at consequuntur temporibus eius cupiditate. Nostrum aut numquam impedit doloremque quo laborum eaque rerum provident sed est incidunt dolore libero, at distinctio tenetur dicta. Expedita necessitatibus est, illo excepturi dolore fugit animi maiores sequi.
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda itaque impedit libero et mollitia pariatur rerum quibusdam veritatis beatae? Itaque necessitatibus doloribus ab porro totam ullam repellat tenetur fugit maiores!
                       </p>
-                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#infoModal">
-                        Information
-                      </button>
-                      <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#infoModal">
-                        Add Data
-                      </button>
-                      <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#infoModal">
-                        Chart
-                      </button>
+                      <a href="{{url_for('methodology.methodology_m')}}" class="btn" style="color: black; text-decoration: none;">Methodology</a>
+                      <a href="{{url_for('carbon_app.my_data')}}" class="btn" style="color: black; text-decoration: none;">My data</a>
                     </div>
                   </div>
             </div>
@@ -52,6 +47,110 @@
             </div>
         </div>
       </section> 
+
+      <section class="section_new_entries">
+        <div class="container">
+          <div class="developers d_team">
+            <h1 style="text-align: center;"> New entries</h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum quo recusandae sed praesentium corporis necessitatibus facilis et eveniet, hic illo! Assumenda modi quasi dolores, dicta velit laudantium magni nam quia laborum nostrum fuga eveniet, maxime maiores voluptates doloribus pariatur omnis?
+            </p>
+          </div>
+        </section>
+
+
+    <!-- carbon_app_new_entry_main -->
+    <section class="section_carbon_app_new_entry_main">
+      <div class="container">
+    
+        <div class="carbon_app_new_entry_main" style="display:block;">
+          <br>
+          <h3 style="text-align:center;">Find your desired mean of conveyance in the boxes below</h3>     
+        </div>
+    
+        <div class="carbon_app_new_entry_main">
+            <div class="box">
+              <div class="h1 mb-3" style="text-align: center;">
+                  <i class="fa-solid fa-bus"></i>
+              </div>
+              <h3>Bus</h3>
+              <p>1. Enter the number of kilometers. <br> 2. Select the type of fuel
+              </p>
+              <div class="section_container_buttons_carbon_app_new_entry_main">
+                <a class="btn_carbon_app_new_entry_main">New Entry</a>
+              </div> 
+            </div>
+            <div class="box">
+              <div class="h1 mb-3" style="text-align: center;">
+                  <i class="fa-solid fa-car"></i>
+              </div>
+              <h3>Car</h3>
+              <p>1. Enter the number of kilometers. <br> 2. Select the type of fuel
+              </p>
+              <div class="section_container_buttons_carbon_app_new_entry_main">
+                <a class="btn_carbon_app_new_entry_main">New Entry</a>
+              </div> 
+            </div>           
+            <div class="box">
+              <div class="h1 mb-3" style="text-align: center;">
+                  <i class="fa-solid fa-plane"></i>
+              </div>
+              <h3>Plane</h3>
+              <p>1. Enter the number of kilometers. <br> 2. Select the type of fuel
+              </p>
+              <div class="section_container_buttons_carbon_app_new_entry_main">
+                <a class="btn_carbon_app_new_entry_main" >New Entry</a>
+              </div> 
+            </div>
+            <div class="box">
+              <div class="h1 mb-3" style="text-align: center;">
+                  <i class="fa-solid fa-ship"></i>
+              </div>
+              <h3>Ferry</h3>
+              <p>1. Enter the number of kilometers. <br> 2. Select the type of fuel
+              </p>
+              <div class="section_container_buttons_carbon_app_new_entry_main">
+                <a class="btn_carbon_app_new_entry_main">New Entry</a>
+              </div> 
+            </div>      
+            <div class="box">
+              <div class="h1 mb-3" style="text-align: center;">
+                <i class="fa-solid fa-motorcycle"></i>
+              </div>
+              <h3>Motorbike</h3>
+              <p>1. Enter the number of kilometers. <br> 2. Select the type of fuel
+              </p>
+              <div class="section_container_buttons_carbon_app_new_entry_main">
+                <a class="btn_carbon_app_new_entry_main">New Entry</a>
+              </div> 
+            </div>    
+            <div class="box">
+              <div class="h1 mb-3" style="text-align: center;">
+                <i class="fa-solid fa-bicycle"></i>
+              </div>
+              <h3>Bicycle</h3>
+              <p>Enter the number of kilometers.
+              </p>
+              <div class="section_container_buttons_carbon_app_new_entry_main">
+                <a class="btn_carbon_app_new_entry_main">New Entry</a>
+              </div> 
+            </div>
+            <div class="box">
+              <div class="h1 mb-3" style="text-align: center;">
+                <i class="fa-solid fa-person-walking"></i>
+              </div>
+              <h3>Walk</h3>
+              <p>Enter the number of kilometers.
+              </p>
+              <div class="section_container_buttons_carbon_app_new_entry_main">
+                <a class="btn_carbon_app_new_entry_main">New Entry</a>
+              </div> 
+            </div>   
+        </div>
+    
+      </div>          
+    </section>
+
     {% endblock %}
     
 </body>

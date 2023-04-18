@@ -17,26 +17,20 @@
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
   <!-- Font Awesome-->
-  <link rel="stylesheet" href="/static/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
   <div id="wrap" class="container-background">
     <div id="main">
       <!-- Creating navbar and setting active page -->
-      {% set navigation_bar_logout = [
+      {% set navigation_bar = [
         ('/', 'home', 'Home'),
         ('/methodology', 'methodology', "Methodology"),
         ('/carbon_app', 'carbon_app', 'Carbon App'),
         ('/register', 'register', 'Register'),
         ('/login', 'login', 'Login'),
-        ] -%}
-
-      {% set navigation_bar_login = [
-        ('/', 'home', 'Home'),
-        ('/methodology', 'methodology', "Methodology"),
-        ('/carbon_app', 'carbon_app', 'Carbon App'),
-        ('/logout', 'logout', 'Logout')
+        ('/my_data', 'my_data', 'My data')
         ] -%}
       <nav class="navbar navbar-expand-lg navbar-dark bg-primary" id="navbar">
         <div class="container-fluid">
@@ -46,15 +40,14 @@
               <img src="static/images/navbar.png" height="40" class="d-inline-block align-top">  
             </h4>
           </a>
-          <!-- Navbar collaps button when screens get's small-->
+          <!-- Navbar collapse button when screens is small-->
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <!-- Navbar items, iteriate trough the navigation_bar list-->
+          <!-- Navbar items, iterate through the navigation_bar list-->
           <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-              {% if session['logged_in'] == True %}
-              {% for href, id, caption in navigation_bar_login %}
+              {% for href, id, caption in navigation_bar %}
               <li 
                 {% if id == active_page %} 
                   class="nav-item active" 
@@ -64,18 +57,6 @@
                 <a class="nav-link" href="{{ href|e }}">{{ caption|e }}</a>
               </li>
               {% endfor %}
-              {% else %}
-              {% for href, id, caption in navigation_bar_logout %}
-              <li 
-                {% if id == active_page %} 
-                  class="nav-item active" 
-                {% else %} 
-                  class="nav-item" 
-                {% endif %}>
-                <a class="nav-link" href="{{ href|e }}">{{ caption|e }}</a>
-              </li>
-              {% endfor %}
-              {% endif %}
             </ul>
           </div>
         </div>

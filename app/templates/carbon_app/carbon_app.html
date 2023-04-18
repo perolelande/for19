@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% block content %}
+<head>
+    <link
+    rel="stylesheet"
+    type="text/css"
+    href="{{ url_for('static', filename='carbon_app.css') }}"
+  />
+</head>
+<!-- Header -->
+<section class="section_header_home">
+    <div class="container">
+      <div class="header_home">
+        <div class="box_home">
+          <h1 style="font-size: 55px">
+            <span class="text-logo"> Carbon app</span>
+          </h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium
+            officiis voluptas fugit repellat iusto, amet, nobis exercitationem
+            labore expedita quaerat id molestiae reprehenderit sed distinctio
+            dicta doloribus ad quia maiores et eveniet dolorum quod. Reiciendis,
+            exercitationem facilis rem consequuntur possimus sunt quisquam.
+            Voluptatum sed minus quisquam voluptatibus, dolor sunt magnam? Lorem
+            ipsum dolor sit amet consectetur, adipisicing elit. Eos pariatur error
+            recusandae dignissimos, vero aspernatur odio quis officia! Nihil
+            voluptatibus id magni asperiores soluta vero adipisci ratione impedit
+            quam blanditiis reiciendis laboriosam, delectus, excepturi ut saepe
+            rerum. A, quisquam? Autem.
+          </p>
+        </div>
+      </div>
+
+      <div class="container_buttons_header_home" style="text-align: center;">
+        <div class="btn_carbon">
+          <a
+            href="{{url_for('carbon_app.new_entry')}}"
+            class="btn btn-primary btn-lg mr-2"
+            ,
+            style="background-color: #f37979; border: #f37979;"
+            >New entry</a
+          >
+          <a
+          href="{{url_for('carbon_app.your_data')}}"
+          class="btn btn-primary btn-lg mr-2"
+          ,
+          style="background-color: #f37979; border: #f37979;"
+          >Your data</a
+        >
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
